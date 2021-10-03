@@ -19,4 +19,20 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+    <distributionManagement>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>core-app-releases</id>
+      <name>core-app-releases</name>
+      <url>http://3.108.234.230:31213/repository/core-app-releases/</url>
+      <layout>default</layout>
+    </repository>
+    <snapshotRepository>
+      <uniqueVersion>true</uniqueVersion>
+      <id>core-app-snapshots</id>
+      <name>core-app-snapshots</name>
+      <url>http://3.108.234.230:31213/repository/core-app-snapshots/</url>
+      <layout>legacy</layout>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
