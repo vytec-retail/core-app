@@ -8,7 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 git branch: 'main', url: 'https://github.com/vytec-retail/core-app.git'
-                sh "mvn -Dmaven.test.failure.ignore=true clean deploy"
+                sh "mvn -f pom.xml -Dmaven.test.failure.ignore=true clean deploy -s settings.xml"
             }
 
             post {
