@@ -18,10 +18,13 @@ pipeline {
                 }
             }
         }
-        stage('Build2') {
+        stage('deploy') {
+              agent { label 'k8s-label' }
             steps {
-                input 'aproove the build to deploy'
+                input 'aproove to deploy app into k8s'
                 echo "deploy into dev k8s cluster"
+                git branch: 'master', url: 'https://github.com/qf-devops/k8s-microservices.git'
+                /usr/bin/kubectl -f k8s-microservices/kubernetes/
             }
         }
     }
